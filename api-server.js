@@ -7,6 +7,10 @@ const supaUrl = process.env.DATABASE_URL;
 const supaAnonKey = process.env.API_KEY;
 const supabase = supa.createClient(supaUrl, supaAnonKey);
 
+const jsonMessage = (msg) => { 
+    return { message : msg }; 
+};
+
 app.get('/api/circuits', async (req, res) => { 
     const {data, error} = await supabase 
     .from('circuits') 
@@ -21,7 +25,7 @@ app.get('/api/circuits/:ref', async (req, res) => {
     .eq('circuitRef',req.params.ref);
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${ref}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.ref}.`));
     }
 
     res.send(data); 
@@ -35,7 +39,7 @@ app.get('/api/circuits/season/:year', async (req, res) => {
     .order('round', {ascending: true});
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${req.params.year}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.year}.`));
     }
 
     res.send(data); 
@@ -55,7 +59,7 @@ app.get('/api/constructors/:ref', async (req, res) => {
     .eq('constructorRef',req.params.ref);
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${ref}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.ref}.`));
     }
 
     res.send(data); 
@@ -76,7 +80,7 @@ app.get('/api/drivers/:ref', async (req, res) => {
     .eq('driverRef', ref);
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${ref}.` });
+        return res.json(jsonMessage( `No data found for ${ref}.`));
     }
 
     res.send(data); 
@@ -89,7 +93,7 @@ app.get('/api/drivers/search/:substring', async (req, res) => {
     .ilike('surname', req.params.substring + '%');
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${substring}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.substring}.`));
     }
 
     res.send(data); 
@@ -102,7 +106,7 @@ app.get('/api/drivers/race/:raceId', async (req, res) => {
     .eq('raceId', req.params.raceId);
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${raceId}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.raceId}.`));
     }
 
     res.send(data); 
@@ -116,7 +120,7 @@ app.get('/api/races/:raceId', async (req, res) => {
     .eq('raceId', req.params.raceId);
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${raceId}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.raceId}.`));
     }
 
     res.send(data); 
@@ -130,7 +134,7 @@ app.get('/api/races/season/:year', async (req, res) => {
     .order('round', {ascending: true});
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${year}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.year}.`));
     }
 
     res.send(data); 
@@ -145,7 +149,7 @@ app.get('/api/races/season/:year/:round', async (req, res) => {
     .order('round', {ascending: true});
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${round}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.year} and ${req.params.round}.`));
     }
 
     res.send(data); 
@@ -160,7 +164,7 @@ app.get('/api/races/circuits/:ref', async (req, res) => {
     .order('year', {ascending: true});
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${ref}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.ref}.`));
     }
 
     res.send(data); 
@@ -168,7 +172,7 @@ app.get('/api/races/circuits/:ref', async (req, res) => {
 
 app.get('/api/races/circuits/:ref/season/:start/:end', async (req, res) => { 
     if (end < start) {
-      return res.status(400).json({ message: 'end year cannot be before start year.' });
+      return res.json(jsonMessage(`end year cannot be before start year.`));
     }
 
     const {data, error} = await supabase 
@@ -180,7 +184,7 @@ app.get('/api/races/circuits/:ref/season/:start/:end', async (req, res) => {
     .order('year', {ascending: true});
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${ref}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.ref}.`));
     }
 
     res.send(data); 
@@ -196,7 +200,7 @@ app.get('/api/results/:raceId', async (req, res) => {
     .order('grid', {ascending: true});
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${raceId}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.raceId}.`));
     }
 
     res.send(data); 
@@ -212,7 +216,7 @@ app.get('/api/results/driver/:ref', async (req, res) => {
     .eq('driverRef', ref)
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${ref}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.ref}.`));
     }
 
     res.send(data); 
@@ -220,11 +224,11 @@ app.get('/api/results/driver/:ref', async (req, res) => {
 
 app.get('/api/results/drivers/:ref/seasons/:start/:end', async (req, res) => { 
     if (end < start) {
-      return res.status(400).json({ message: 'end year cannot be before start year.' });
+      return res.json(jsonMessage(`end year cannot be before start year.`));
     }
     
     if (end+2 > start) {
-      return res.status(400).json({ message: 'two years is the maximum range searchable.' });
+      return res.json(jsonMessage(`two years is the maximum searchable range.`));
     }
 
     ref = req.params.ref.toLowerCase();
@@ -238,7 +242,7 @@ app.get('/api/results/drivers/:ref/seasons/:start/:end', async (req, res) => {
     .lte('results (races (year))',req.params.end);
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${ref}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.ref}.`));
     }
 
     res.send(data) 
@@ -253,7 +257,7 @@ app.get('/api/qualifying/:raceId', async (req, res) => {
     .eq('raceId', req.params.raceId);
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${raceId}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.raceId}.`));
     }
 
     res.send(data)
@@ -269,7 +273,7 @@ app.get('/api/standings/drivers/:raceId', async (req, res) => {
     .order('position', {ascending: true});
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${raceId}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.raceId}.`));
     }
 
     res.send(data)
@@ -286,7 +290,7 @@ app.get('/api/standings/constructors/:raceId', async (req, res) => {
     .order('position', {ascending: true});
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: `No data found for ${raceId}.` });
+        return res.json(jsonMessage( `No data found for ${req.params.raceId}.`));
     }
 
     res.send(data)
