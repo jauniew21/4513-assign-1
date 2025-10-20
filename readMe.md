@@ -1,29 +1,29 @@
-https://four513-assign-1.onrender.com/api/circuits
-https://four513-assign-1.onrender.com/api/circuits/monza
-https://four513-assign-1.onrender.com/api/circuits/calgary
-https://four513-assign-1.onrender.com/api/constructors
-https://four513-assign-1.onrender.com/api/constructors/ferrari
-https://four513-assign-1.onrender.com/api/drivers
-https://four513-assign-1.onrender.com/api/drivers/Norris
-https://four513-assign-1.onrender.com/api/drivers/norris
-https://four513-assign-1.onrender.com/api/drivers/connolly
-https://four513-assign-1.onrender.com/api/drivers/search/sch
-https://four513-assign-1.onrender.com/api/drivers/search/xxxxx
-https://four513-assign-1.onrender.com/api/drivers/race/10
-https://four513-assign-1.onrender.com/api/races/10
-https://four513-assign-1.onrender.com/api/races/season/2021
-https://four513-assign-1.onrender.com/api/races/season/1800
-https://four513-assign-1.onrender.com/api/races/season/2020/5
-https://four513-assign-1.onrender.com/api/races/season/2020/100
-https://four513-assign-1.onrender.com/api/races/circuits/7
-https://four513-assign-1.onrender.com/api/races/circuits/7/season/2015/2022
-https://four513-assign-1.onrender.com/api/races/circuits/7/season/2022/2022
-https://four513-assign-1.onrender.com/api/results/11
-https://four513-assign-1.onrender.com/api/results/driver/hamilton
-https://four513-assign-1.onrender.com/api/results/driver/connolly
-https://four513-assign-1.onrender.com/api/results/drivers/sainz/seasons/2021/2022
-https://four513-assign-1.onrender.com/api/results/drivers/sainz/seasons/2035/2022
-https://four513-assign-1.onrender.com/api/qualifying/1106
-https://four513-assign-1.onrender.com/api/standings/drivers/1120
-https://four513-assign-1.onrender.com/api/standings/constructors/1120
-https://four513-assign-1.onrender.com/api/standings/constructors/asds
+https://four513-assign-1.onrender.com/api/circuits \\
+https://four513-assign-1.onrender.com/api/circuits/monza \\
+https://four513-assign-1.onrender.com/api/circuits/calgary \\
+https://four513-assign-1.onrender.com/api/constructors \\
+https://four513-assign-1.onrender.com/api/constructors/ferrari \\
+https://four513-assign-1.onrender.com/api/drivers \\
+https://four513-assign-1.onrender.com/api/drivers/Norris \\
+https://four513-assign-1.onrender.com/api/drivers/norris \\
+https://four513-assign-1.onrender.com/api/drivers/connolly \\
+https://four513-assign-1.onrender.com/api/drivers/search/sch  \\
+https://four513-assign-1.onrender.com/api/drivers/search/xxxxx  \\
+https://four513-assign-1.onrender.com/api/drivers/race/10 \\
+https://four513-assign-1.onrender.com/api/races/10  \\
+https://four513-assign-1.onrender.com/api/races/season/2021 \\
+https://four513-assign-1.onrender.com/api/races/season/1800 \\
+https://four513-assign-1.onrender.com/api/races/season/2020/5 \\
+https://four513-assign-1.onrender.com/api/races/season/2020/100 \\
+https://four513-assign-1.onrender.com/api/races/circuits/7 \\
+https://four513-assign-1.onrender.com/api/races/circuits/7/season/2015/2022 \\
+https://four513-assign-1.onrender.com/api/races/circuits/7/season/2022/2022 \\
+https://four513-assign-1.onrender.com/api/results/11 \\
+https://four513-assign-1.onrender.com/api/results/driver/hamilton \\
+https://four513-assign-1.onrender.com/api/results/driver/connolly \\
+https://four513-assign-1.onrender.com/api/results/drivers/sainz/seasons/2021/2022 \\
+https://four513-assign-1.onrender.com/api/results/drivers/sainz/seasons/2035/2022 \\
+https://four513-assign-1.onrender.com/api/qualifying/1106 \\
+https://four513-assign-1.onrender.com/api/standings/drivers/1120 \\
+https://four513-assign-1.onrender.com/api/standings/constructors/1120 \\
+https://four513-assign-1.onrender.com/api/standings/constructors/asds \\
