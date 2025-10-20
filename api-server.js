@@ -170,8 +170,9 @@ app.get('/api/races/circuits/:ref', async (req, res) => {
     res.send(data); 
 });
 
+// still funky
 app.get('/api/races/circuits/:ref/season/:start/:end', async (req, res) => { 
-    if (end < start) {
+    if (req.params.end < req.params.start) {
       return res.json(jsonMessage(`end year cannot be before start year.`));
     }
 
@@ -222,13 +223,14 @@ app.get('/api/results/driver/:ref', async (req, res) => {
     res.send(data); 
 });
 
+// still funky
 app.get('/api/results/drivers/:ref/seasons/:start/:end', async (req, res) => { 
-    if (end < start) {
-      return res.json(jsonMessage(`end year cannot be before start year.`));
+    if (req.params.end+2 > req.params.start) {
+      return res.json(jsonMessage(`two years is the maximum searchable range.`));
     }
     
-    if (end+2 > start) {
-      return res.json(jsonMessage(`two years is the maximum searchable range.`));
+    if (req.params.end < req.params.start) {
+      return res.json(jsonMessage(`end year cannot be before start year.`));
     }
 
     ref = req.params.ref.toLowerCase();

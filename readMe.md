@@ -26,4 +26,4 @@ https://four513-assign-1.onrender.com/api/results/drivers/sainz/seasons/2035/202
 https://four513-assign-1.onrender.com/api/qualifying/1106 \
 https://four513-assign-1.onrender.com/api/standings/drivers/1120 \
 https://four513-assign-1.onrender.com/api/standings/constructors/1120 \
-https://four513-assign-1.onrender.com/api/standings/constructors/asds \
+https://four513-assign-1.onrender.com/api/standings/constructors/asds
